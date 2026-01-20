@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfoli - flexible visual systems</title>
+    <title>Marta Tortosa | Portfoli</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -19,150 +19,125 @@
       }
 
       :root {
-        --primary-size-modul: 100px;
+        --primary-size-modul: 80px;
         --secondary-size-modul: calc(var(--primary-size-modul)/2);
+        --fondo: #f8f9ff;
+        --morado: #6366f1;
+        --morado-oscuro: #0f172a;
+        --lavanda: #e0e7ff;
       }
 
-      .inter-header {
-        font-family: "Inter", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
+      body {
+        background-color: var(--fondo);
+        overflow-x: hidden;
       }
 
-      h1,
-      h2 {
-        color: #041466;
-        margin: 10px 0 0 10px;
-      }
-      h3 {
-        color: white;
-        margin: 10px 0 0 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      a {
-        color: #041466;
-        text-decoration: none;
-      }
-      a:hover {
-        color: white;
-      }
-      main a {
-        position: relative;
-        display: inline-block;
-        padding-bottom: 4px;
-      }
-
-      main a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #041466;
-        transform: scaleX(0);
-        transform-origin: right;
-        animation: none;
-      }
-
-      main a:hover::after {
-        animation: underline 0.35s ease forwards;
-      }
-      @keyframes underline {
-        from {
-          transform: scaleX(0);
-          transform-origin: right;
-        }
-        to {
-          transform: scaleX(1);
-          transform-origin: left;
-        }
-      }
-      h1 {
-        font-size: 55px;
-        transition: font-size 0.3s ease;
-      }
-      h1:hover {
-        font-size: 60px;
-      }
-
-      #nomcomplet {
-        color: #041466;
-        position: relative;
-        display: inline-block;
-      }
-      #nomcomplet::before {
-        content: "MARTA TORTOSA ESPAÑA";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        color: white;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-      #nomcomplet:hover::before {
-        opacity: 100;
-      }
       .container {
         width: 100vw;
         height: 100vh;
         display: flex;
       }
+
       #uno {
-        width: 50%;
-        flex-grow: 1;
-        background-color: #908eef;
-      }
-      header {
-        padding: 20px 0 0 20px;
-        width: 100%;
-        height: 50%;
-        background-color: #908eef;
-      }
-      main {
-        width: 100%;
-        height: 50%;
+        width: 45%;
         display: flex;
-        background-color: #908eef;
+        flex-direction: column;
+        background-color: white;
+        padding: 60px;
+        justify-content: center;
       }
+
+      header {
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 50px;
+        font-weight: 800;
+        color: var(--morado-oscuro);
+        transition: all 0.4s ease;
+      }
+
+      h1:hover {
+        color: var(--morado);
+      }
+
+      #nomcomplet {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--morado);
+      }
+
+      main {
+        display: flex;
+        gap: 40px;
+      }
+
       main section {
-        padding: 20px 0 0 20px;
-        width: 50%;
-        height: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
       }
+
+      h2,
+      a {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--morado-oscuro);
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s;
+      }
+
+      h2 a:hover {
+        color: var(--morado);
+      }
+
+      h2 a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--morado);
+        transition: width 0.3s ease;
+      }
+
+      h2 a:hover::after {
+        width: 100%;
+      }
+
       #dos {
-        width: 50%;
-        flex-grow: 1;
+        width: 55%;
+        background-color: var(--lavanda);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
       }
+
       .top,
       .bottom,
       .left,
       .right {
-        background-color: #041466;
+        background-color: var(--morado-oscuro);
+        transition: all 0.5s ease;
       }
-      .top:hover {
-        background-color: #908eef;
+
+      #dos div:hover > .top,
+      #dos div:hover > .bottom,
+      #dos div:hover > .left,
+      #dos div:hover > .right {
+        background-color: var(--morado);
       }
-      .bottom:hover {
-        background-color: #908eef;
-      }
-      .left:hover {
-        background-color: #908eef;
-      }
-      .right:hover {
-        background-color: #908eef;
-      }
+
       #mXL {
         position: relative;
         width: 100%;
-        height: 35%;
-        background-color: white;
+        height: 40%;
       }
+
       #mXL .top {
         position: absolute;
         top: 0;
@@ -191,16 +166,20 @@
         bottom: var(--primary-size-modul);
         left: 0;
       }
+
       #m {
         width: 100%;
-        height: 65%;
-        background-color: white;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
       }
+
       #mL {
         position: relative;
         width: 100%;
         height: 50%;
       }
+
       #mL .top {
         position: absolute;
         top: 0;
@@ -229,29 +208,32 @@
         bottom: var(--secondary-size-modul);
         left: 0;
       }
+
       #mS {
         width: 100%;
         height: 50%;
         display: flex;
       }
+
       .mXS {
         position: relative;
         width: 50%;
         height: 100%;
       }
+
       .mXS .top {
         position: absolute;
         top: 0;
         right: var(--secondary-size-modul);
         left: var(--secondary-size-modul);
-        height: var(--primary-size-modul);
+        height: var(--secondary-size-modul);
       }
       .mXS .bottom {
         position: absolute;
         bottom: 0;
         right: var(--secondary-size-modul);
         left: var(--secondary-size-modul);
-        height: var(--primary-size-modul);
+        height: var(--secondary-size-modul);
       }
       .mXS .right {
         position: absolute;
@@ -267,38 +249,32 @@
         bottom: var(--secondary-size-modul);
         width: var(--secondary-size-modul);
       }
-      @media (min-width: 1024px) and (max-width: 489px) {
+
+      @media (min-width: 1024px) {
         :root {
           --primary-size-modul: 100px;
         }
+
         .inter-header {
           font-size: 2.6em;
         }
-        .container {
-          flex-direction: column;
-          height: 200vh;
-        }
-        #uno,
-        #dos {
-          width: 100%;
-          flex-grow: 1;
-        }
       }
+
       @media (max-width: 480px) {
         :root {
           --primary-size-modul: 50px;
         }
-        .container {
-          flex-direction: column;
-          height: 200vh;
-        }
+
         .inter-header {
           font-size: 1.5em;
         }
-        #uno {
-          width: 100%;
-          flex-grow: 1;
+
+        .container {
+          flex-direction: column;
+          min-height: 100vh;
         }
+
+        #uno,
         #dos {
           width: 100%;
           flex-grow: 1;
@@ -311,23 +287,24 @@
       <div id="uno">
         <header>
           <h1>PORTFOLI</h1>
-          <h3 id="nomcomplet"><span class="MARTA TORTOSA ESPAÑA">MTE</span></h3>
+          <div id="nomcomplet">MARTA TORTOSA ESPAÑA</div>
         </header>
         <main>
           <section>
-            <h2><a href=" https://martatortosa.github.io/p1/">P1</a></h2>
-            <h2><a href=" https://martatortosa.github.io/p3/">P3</a></h2>
-            <h2><a href=" https://martatortosa.github.io/p6/">P6</a></h2>
-            <h2><a href=" https://martatortosa.github.io/p8/">P8</a></h2>
+            <h2><a href="https://martatortosa.github.io/p1/">Project 01</a></h2>
+            <h2><a href="https://martatortosa.github.io/p3/">Project 03</a></h2>
+            <h2><a href="https://martatortosa.github.io/p6/">Project 06</a></h2>
+            <h2><a href="https://martatortosa.github.io/p8/">Project 08</a></h2>
           </section>
           <section>
-            <h2><a href=" https://martatortosa.github.io/p2/">P2</a></h2>
-            <h2><a href=" https://martatortosa.github.io/p5/">P5</a></h2>
-            <h2><a href=" https://martatortosa.github.io/p7/">P7</a></h2>
-            <h2><a href=" https://martatortosa.github.io/p9/">P9</a></h2>
+            <h2><a href="https://martatortosa.github.io/p2/">Project 02</a></h2>
+            <h2><a href="https://martatortosa.github.io/p5/">Project 05</a></h2>
+            <h2><a href="https://martatortosa.github.io/p7/">Project 07</a></h2>
+            <h2><a href="https://martatortosa.github.io/p9/">Project 09</a></h2>
           </section>
         </main>
       </div>
+
       <div id="dos">
         <div id="mXL">
           <div class="top"></div>
